@@ -1,25 +1,16 @@
 import random
 
-
 class Dot:
-    def __init__(self):
-        self.coord = [random.uniform(0, 1), random.uniform(0, 1)]
-        self.flag = True
-
-import random
-
-
-class Dot:
-    def __init__(self):
+    def __init__(self): #Инициализируем точку
         self.coord = [
             random.randint(0,1),
             random.randint(0,1)
         ]
 
-    def calculate(self, w: list):
-        return max(0, self.coord[0] * w[0] + self.coord[1] * w[1]) % 2
+    def calculate(self, w: list): #Считаем индуцированное локальное поле
+        return max(0, self.coord[0] * w[0] + self.coord[1] * w[1])
 
-    def out(self):
+    def out(self): #Выводим точку на экран
         return self.coord
 
 
@@ -30,7 +21,7 @@ class NeuroNet:
 
         self.dots = [Dot() for i in range(10)]
 
-    def start(self):
+    def start(self): #Запускаем нейросеть
         for i in range(10):
             if self.dots[i].calculate(self.w) == 1:
                 print(self.dots[i].out())
