@@ -3,6 +3,14 @@ import random
 
 class Dot:
     def __init__(self):
+        self.coord = [random.uniform(0, 1), random.uniform(0, 1)]
+        self.flag = True
+
+import random
+
+
+class Dot:
+    def __init__(self):
         self.coord = [
             random.randint(0,1),
             random.randint(0,1)

@@ -9,6 +9,7 @@ def sigmoid(x):
 def sigmoid_derivative(x):
     return x * (1 - x)
 
+
 # Входные данные
 inputs = np.array(
     [[1, 0, 1],
